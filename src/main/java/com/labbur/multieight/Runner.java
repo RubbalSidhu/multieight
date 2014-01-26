@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Runner {
+
+    // Wait time before the application starts simulating typing
     private static final long SLEEP_TIME = 5000;
 
     public static void main(String[] args) throws IOException, AWTException, InterruptedException {

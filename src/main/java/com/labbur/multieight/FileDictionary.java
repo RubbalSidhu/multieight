@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Implements a file based dictionary
+ */
 public class FileDictionary implements Dictionary {
 
     Set<String> wordSet;

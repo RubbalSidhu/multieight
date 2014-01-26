@@ -14,12 +14,18 @@ public class Player {
         this.dictionary = dictionary;
     }
 
+    /**
+     * Simulates typing of all the valid words which can be formed from the input array. (Prints
+     * all valid permutations which can be formed from any subset of the input array)
+     * @param input
+     * @throws InterruptedException
+     */
     public void playRound(char[] input) throws InterruptedException {
         tryPermutations(new char[0], input, new HashSet<String>());
     }
 
-    void tryPermutations(char[] done, char[] left, Set<String> wordsUsed) throws InterruptedException {
-        //System.out.println(done);
+    private void tryPermutations(char[] done, char[] left, Set<String> wordsUsed) throws InterruptedException {
+
         int l = left.length;
         String wordFormed = new String(done);
         if (!wordFormed.isEmpty() && dictionary.isValidWord(wordFormed) && !wordsUsed.contains(wordFormed)) {
@@ -55,6 +61,7 @@ public class Player {
         }
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        // To avoid overwhelming the system
         Thread.sleep(10);
     }
 }
